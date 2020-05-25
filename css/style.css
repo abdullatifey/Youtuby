@@ -1,0 +1,769 @@
+@font-face{
+    font-family:"ar-font";
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+body{
+    font-family:"ar-font";
+    direction: rtl;
+    margin-top: 60px;/*من أجل إظهار المحتوى من تحت الناف بار*/
+    background-color: #fafafa;
+}
+a {
+    color:#000;
+}
+
+/**** القائمة العلوية******/
+#top-menu .navbar{
+    background-color: #fff !important;
+    padding: 10px 37px;
+    
+}
+/*وضع دائرة حول الأيقونة*/
+#top-menu .video-icon {
+    background-color: #bf40bf;
+    color: #fff;
+    border-radius: 15%;
+    padding: 2px;
+}
+/*كلمة يوتيوبي*/
+#top-menu .navbar-brand{
+    margin-right: 35px;
+}
+/*وضع تأثير لانتقال الألوان في الروابط*/
+.navbar-light .navbar-nav .nav-link{
+    color:#000;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: 1px;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+/*تغيير لون الروابط عندما يأتي مؤشر الفأرة عليهم*/
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .active>.nav-link{
+    color:#fff;
+    background-color: #bf40bf;
+}
+/*تغيير الألوات الإفتراضية للزر*/
+.btn{
+    color: #bf40bf;
+    border-color: #bf40bf;
+}
+
+/*تغيير ألوان الزر عند وضع مؤشر الفأرة عليه*/
+.btn:hover {
+    color: #fff;
+    border-color: #bf40bf;
+    background-color: #bf40bf;
+}
+/*تغيير لون أيقونة تسجيل الدخول*/
+#top-menu .fa-user-plus{
+    color:#bf40bf;
+    cursor: pointer;
+}
+/*إزاحة إشارة الخطأ لليسار*/
+.modal .modal-header .close{
+    position: absolute;
+    left: 18px;
+}
+.btn-primary{
+    color:#fff;
+    background-color: #bf40bf;
+}
+
+/*************************************************sidebar*****************************************************/
+#top-menu .fa-bars{
+    cursor:pointer;
+}
+
+.sidebar{
+    width:17rem;
+    font-size:1rem;
+    position: fixed;
+    z-index:1;
+    transition: all 0.5s ease-in-out;
+    height:95%; /*طول القائمة*/
+    overflow: hidden;/*كل شيء بعد ال 90 أخفيه*/
+    right:0;/* سنستعمل هذه الخاصية عند إضافة طبقة سوداء*/
+}
+.sidebar .mor{
+    color:#bf40bf;
+    margin-left:10px;
+}
+
+/*تغيير الألوان عند مرور مؤشر الفأرة على القائمة*/
+.sidebar .list-group-item:hover{
+    color:#fff;
+    background-color: #bf40bf;
+}
+/*تغيير لون الأيقونات أيضًا عند مرور مؤشر الفأرة على القائمة*/
+.sidebar .list-group-item:hover .mor{
+    color:#fff;
+}
+/*لإزاحة القائمة الجانبية لليمين وإخفائها*/
+#wrap.toggled .sidebar{
+    right:-17rem;
+}
+/*إظهار السكرول بشكل شاقولي*/
+.sidebar:hover{
+    overflow-y: scroll;
+}
+/*تنسيق خلفية السكرول*/
+.sidebar::-webkit-scrollbar{
+    background: rgb(230,230,230);
+    width:8px;
+}
+/*تنسيق السكرول*/
+.sidebar::-webkit-scrollbar-thumb{
+    background: rgb(179,179,179);
+    width:8px;
+}
+/*حذف الفراغ من يسار القائمة العلوية لكي تلتصق بالسكرول*/
+.rtl .list-group{
+    padding-left: 0px;
+}
+/*الطبقة السوداء*/
+.layer {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display:none;
+}
+/*************************************************جسم الصفحة*********************************************/
+.content{
+    margin: 100px;
+}
+.suggest{
+    margin-bottom: 35px;
+}
+.card-deck .card{
+    box-shadow: 5px 5px 5px grey;
+    padding: 4px; /*من الداخل ليتباعد المحتويات عن الحرف*/
+    height: 307px;
+    margin-bottom: 27px;
+}
+.card-deck .card .card-body{
+    padding:0px;
+}
+/*تصغير الصورة ووضع فراغ من اليسار لكي تتباعد عن اسم القناة*/
+.rounded-circle{
+    width:30px;
+    margin-left: 10px;
+}
+/*مسح الخط من تحت العناوين*/
+.card a{
+    text-decoration: none;
+}
+/*تحويل ألوان النصوص لأسود*/
+.card-deck .card .card-body,
+.card-deck .card .card-footer,
+.card-deck .card .channel-img{
+    color:#000;
+}
+.card .channel-img{
+    padding: 6px 19px;
+}
+
+/*تنسيق مدة الفيديو ونقله لداخل الصورة*/
+.card-deck .card .time{
+    position: absolute;
+    bottom: 160px;
+    left: 11px;
+    color: #fff;
+    background-color: #000;
+}
+/*تنسيق الأيقونة التي تظهر عند مرور مؤشر الفأرة عالبطاقة*/
+.card-deck .card .fa-play{
+    position: absolute;
+    top: 70px;
+    left: 130px;
+    color:#2c3131c7;
+    display:none;
+}
+/*إظهار الأيقونة عند مرور مؤشر الفأرة على الكرت*/
+.card-deck .card:hover .fa-play{
+    display:inline;
+}
+
+/***************************تجاوبية الصفحة الرئسية مع الشاشات الصغيرة والمتوسطة***************************/
+
+/* حقل البحث في بداية القائمة الجانبية*/
+.list-group input{
+    position: relative;
+    border:none;
+    display: none !important;
+    padding: 10px;
+}
+.list-group .fa-search{
+    position: absolute;
+    top: 15px;
+    left: 42px;
+}
+/* إلى حد الشاشات المتوسطة أظهرها. بس بالشاشات الكبيرة لا تأظهرها*/
+@media (max-width: 992px) {
+    .list-group input{
+        display: inline !important;/*إظهار حقل البحث في الأجهزة الصغيرة والمتوسطة   */
+    }
+}
+
+@media (max-width: 576px) {
+    .card-deck .card .fa-play{
+        top: 60px;
+        left: 120px;
+    }
+    .card-deck .card .time{
+        bottom: 180px;
+    }
+    .card-footer .text-muted{
+        font-size: 12px;
+    }
+}
+/* الكارد متجاوب في الشاشات الكبيرة والصغيرة فقط. إذا أردنا إعادة كتابة التجاوبية من جديد*/
+.card-deck {
+    display: grid;
+}
+@media (min-width: 0) { /*في الشاشات الصغيرة أظهر عنصر*/
+    .card-deck {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (min-width: 768px) { /*في الشاشات المتوسطةأظهر عنصرين*/
+    .card-deck {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 992px) {/*في الشاشات الكبيرةأظهر 4 عناصر*/
+    .card-deck {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (min-width: 1400px) {/*في الشاشات الكبيرةجدًا أظهر 5 عناصر*/
+    .card-deck {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+  /*********************************************صفحة البحث*********************************************/
+
+.search-header{
+    margin-top:30px;
+}
+.left{ /*نقل أيقونة التصفية إلى اليسار*/
+    position: absolute;
+    left: 110px;
+}
+
+/*تغيير مؤشر الفأرة عند المرور على الأيقونة والكتابة التي بجانبها*/
+#search-filters-icon{
+    cursor:pointer;
+}
+/*تنسيق العناصر*/
+.search-header .filter {
+    display: block;/*تجعل العنصر يحتل كل السطر وبالتالي بطلعو العناصر حد بعضها*/
+    cursor: pointer;
+    margin-bottom: 18px;
+}
+.search-header .filter-column {
+    margin: 25px 48px 0;/*وضع فراغات بين الأعمدة*/
+    min-width: fit-content;/*ستحتوي الكتابة كلها بسطر واحد*/
+    display:none;
+}
+/*وقت منختار التشك بوكس غير لونو*/
+.filter-column .filter input:checked+span {
+    color: #bf40bf;
+}
+
+.card {
+    font-size: 1em;
+    padding: 5px;
+    border: none;
+    margin-top:20px;
+    box-shadow: 5px 5px 5px grey;
+}
+.card-block {
+    padding: 1em;
+}
+/*هذا القياس ثابت للصورة في الشاشات الكبيرة والمتوسطة*/
+.page-content .video-img{
+    width: 259px;
+    height: 170px;
+}
+/*البراغراف الخاص بالكرت*/
+.page-content .card-block p{
+    white-space: nowrap;/*منع النزول لسطر جديد والإكتفاء بسطرواحد*/
+    overflow: hidden;/*إخفاء جميع المعلومات بعد السطر الأول*/
+    text-overflow: ellipsis;/*إضافة النقط الثلاث في نهاية الجملة*/
+}
+.page-content .time{
+    position: absolute;
+    bottom: 9px;
+    left: 25px;
+    color: #fff;
+    background-color: #000;
+}
+.page-content .fa-play{
+    position: absolute;
+    top: 70px;
+    left: 130px;
+    color:#2c3131c7;
+    display:none;
+}
+.page-content:hover .fa-play{
+    display:inline;
+}
+.page-content .search-img{
+    width: 32px;
+    margin-right: 13px;
+}
+.page-content{
+    margin-bottom:30px;
+}
+
+@media (max-width: 576px){
+    .result {
+        margin-right: 70px;
+    }
+    #search-filters-icon {
+        position:absolute;
+        left: 50px;
+    }
+    /*تغيير حجم الصورة في الشاشات الصغيرة لتملىء الحاوية*/
+    .page-content .video-img{
+        width: 100%;
+        height: 100%;
+    }
+    .page-content .fa-play{
+        left: 185px;
+        top:100px;
+    }
+    .page-content .search-img{
+        width: 22px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}
+@media (min-width: 577px) and (max-width: 992px) {
+    .card-block{
+        margin-right:75px;
+    }
+    .page-content .fa-play{
+        left: 25px;
+    }
+    .page-content .time{
+        left: -85px;
+    }
+    .result{
+        margin-right: 90px;
+    }
+
+}
+
+ /*********************************************صفحة history*********************************************/
+/*النص يدخل بالصورة لذلك نعطيه حشوة يمينية ليبتعد عنها*/
+.history-page .card-block{
+    margin-right:75px;
+}
+
+.history-page .time {
+    position: absolute;
+    left: -50px;
+    color: #fff;
+    background-color: #000;
+}
+.history-page .fa-play{
+    left: 60px;
+}
+.card{
+    padding:0px;
+}
+/*نقل إشارة الإغلاق وتنسيقها وإخفائها*/
+.history-page .remove{
+    position: absolute;
+    top: 10px;
+    left: 170px;
+    color:#2c3131c7;
+    cursor: pointer;
+    display:none;
+}
+/*إظهار إشارة الإخفاء عند المرور على الكرت*/
+.history-page .card:hover .remove{
+    display:inline;
+}
+/*مسح البوردر من أطراف حقل البحث*/
+.history-page input{
+    border:none;
+}
+/*مسح الظل عند الضغط على حقل البحث*/
+.history-page input:focus{
+    box-shadow: none;
+}
+/*وضع مؤشر الفأرة على التشك بوكس وعلى العناصرأي على الكتابة الموجودة بجانبه*/
+.history-page .list-group input[type="checkbox"] + .list-group-item {
+    cursor: pointer;
+}
+.history-page .list-group input[type="checkbox"] + .list-group-item:before {
+    content: "\2713";/*وضع رمز إشارة الصح قبل الكتابة*/
+    color: #fff;/*وضع اللون لإشارة الصح كلون شفاف أي لن نراه*/
+    font-weight: bold;
+    margin-right: 1em;
+}
+ /*عند الضغط على التشك بوكس أو على الكتابة الموجودة بجانبه غير الألوان*/ 
+ .history-page .list-group input[type="checkbox"]:checked + .list-group-item {
+    background-color: #bf40bf;
+    color: #FFF;
+}
+.history-right-column{
+    background-color: #fff;
+    height: 540px;
+    margin-top: 20px;
+}
+.history-page{
+    margin-top: 70px;
+}
+
+@media (max-width: 576px) {
+    /*تغيير مكان الأيقونة إلي بتطلع بالفيديو بالشاشات الصغيرة*/
+    .history-page .fa-play{
+        top: 100px;
+        left: 180px;
+    }
+    .history-page .time{
+        bottom: 15px;
+        left: 30px;
+    }
+    .history-page .remove{
+        right: 30px;
+    }
+    .history-page .list-group input[type="checkbox"] {
+        display: none !important;
+    }
+    .page-content .search-img{
+        width: 30px;
+    }
+}
+@media (min-width: 577px) and (max-width: 992px) {
+    /*النص يدخل بالصورة لذلك نعطيه حشوة يمينية ليبتعد عنها*/
+    .history-page .card-block{
+        margin-right:130px;
+    }
+    .history-page  .fa-play{
+        left: -20px;
+    }
+    .history-page  .time{
+        left: -125px;
+        bottom:60px;
+    }
+    .history-page .remove{
+        right: 30px;
+    }
+    .list-group-item{
+        font-size: 13px;
+    }
+    .history-page .list-group input[type="checkbox"] {
+        display: none !important;
+    }
+}
+/************************************************* صفحة قناة channel ******************************************/
+
+.channel-page .banner {
+    background-image: url(../img/h-channel.jpg);
+    /*كامل العرض تقسيم 6 أي ستشغل سدس عرض الشاشة*/
+    height: calc(100vw / 6);/*view width*/
+    min-height: 120px;
+    width:100%;
+    background-size: cover;/*لتغطية الصورة كامل الحاوية التي تحتويها*/
+    background-repeat: no-repeat;
+    background-position: 50% 50%;/*تعيين الكتابات داخل الصورة*/
+    position: relative;
+}
+/*تنسيق أيقونات التواصل الاجتماعي*/
+.social-media {
+    background-color: #aba8a84d;
+    padding: 9px 9px 6px 0px;
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+}
+.social-media a {
+    margin-left: 8px;
+}
+/*تنسيق زر الاشتراك*/
+.follow button{
+    color:#fff;
+    background-color: #bf40bf;
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+}
+/*تنسيق حقل البحث*/
+.channel-search{
+    border: none;
+    border-bottom: 5px solid #bf40bf;
+    height: 40px;
+    display: none;  
+}
+/*تنسيق قسم الفيديو التعريفي*/
+.video-section{
+    background-color: #fff;
+    padding:5px;
+    margin-top: 15px;
+}
+/*من أجل أن يمتد الفيديو على طول الحاوية التي تحتويه*/
+.channel-page .card video{
+    width:100%;
+}
+/*إخفاء الظل والبوردر من الكرت*/
+.channel-page .card{
+    border:none;
+    box-shadow: none;
+}
+/*لحذف الحشوات من الحاوية ليمتد قسم الفيديو التعريفي على كامل الصفحة سيظهر سكرول في أسفل الصفحة. هذا لمسح السكرول px-0 بعد استخدام*/
+.container-fluid{
+    overflow: hidden;
+}
+.channel-page .page-content .card-block p {
+    white-space: normal;
+}
+@media (max-width: 576px){
+    .channel-page .latest-download .card{/*تنسيق الكرت*/
+        height: 370px;
+        margin-bottom: 10px;
+    }
+    .channel-page .card-deck .card .fa-play{
+        left: 200px;
+        top:125px;
+    }
+    .channel-page .card-deck .card .time{
+        bottom:155px;
+    }
+}
+@media (min-width: 577px) and (max-width: 992px) {
+    /*في شاشات الآيباد أخفي العنوان عند تخطيه السطر الأول*/
+    .channel-page .card-title{
+        white-space: nowrap;/*منع النزول لسطر جديد والإكتفاء بسطرواحد*/
+        overflow: hidden;/*إخفاء جميع المعلومات بعد السطر الأول*/
+        text-overflow: ellipsis;/*إضافة النقط الثلاث في نهاية الجملة*/
+    }
+    .channel-page .card{/*تنسيق الكرت*/
+        height: 325px;
+    }
+    .channel-page .card-deck .card .fa-play{
+        left: 150px;
+        top: 85px;
+    }
+    .channel-page .card-deck .card .time{
+        bottom: 138px;
+    }
+}
+/*********************************************صفحة المشاهدة*************************************************/
+.watch-page video{
+    width:100%;/*تعبئة الفيديو بالحاوية التي تحتويه فقط*/
+}
+/*مسح الخط من تحت الروابط*/
+.watch-page a{
+    text-decoration: none;
+}
+/*إخفاء النص الذي سنظهره ونخفيه عند الضغط على الزر*/
+.watch-page #more{
+    display:none;
+}
+/*وضع فراغ بين الأيقونات*/
+.watch-icons svg{
+    margin-left:15px;
+    color: #fff;
+}
+/*لكي توازي الأيقونات الكتابة التي فوقها*/
+.watch-icons{
+    position: absolute;/*وضع الأيقونات بأسفل الفيديو*/
+    bottom:5px;
+    right: 39px;
+    width:100%;
+}
+/*عند مرور الفأرة على الأيقونات*/
+.watch-icons svg:hover{
+    cursor: pointer;
+    color: #bf40bf;
+}
+/*عمل دائرة حول الأيقونات*/
+.circle-icon {
+    background: #adabad;
+    padding:5px;
+    border-radius: 50%;
+}
+/*تحريك كلمة إبلاغ إلى اليسار*/
+.watch-icons .report{
+    position: absolute;
+    left: 90px;
+    cursor:pointer;
+}
+/*تنسيق الوقت وتغيير مكانه*/
+.watch-page .card .time{
+    position: absolute;
+    bottom: 11px;
+    left: 25px;
+    color: #fff;
+    background-color: #000;
+}
+/*تنسيق أيقونة بدء الفيديو وتغيير مكانها*/
+.watch-page .card .fa-play{
+    position: absolute;
+    bottom: 50px;
+    left: 105px;
+    color:#2c3131c7;
+    display:none;
+}
+/*إظهار الأيقونة عند مرور مؤشر الفأرة على الكرت*/
+.watch-page .card:hover .fa-play{
+    display:inline;
+}
+/*****قسم التعليقات******/
+/*<!---قسم العنوان الذي يوجد فيه عدد التعليقات والقائمة المنزلقة-->*/
+
+/*تنسيق التعليقات والقائمة المنزلقة*/
+.comments-details button.btn.dropdown-toggle,
+.comments-details .total-comments {
+    font-size: 18px;
+    font-weight: 500;
+    color: #5e5e5e;
+    border: none;
+}
+/*تغيير لون الزر للون الأبيض عند مرور الفأرة عليه*/
+.comments-details button.btn.dropdown-toggle:hover{
+    color:#fff;
+}
+/*تغيير ألوان عناصر القائمة المنزلقة*/
+.dropdown-item:hover{
+    color:#fff;
+    background-color: #bf40bf;
+}
+/*تنسيق قسم إضافة تعليق عام*/
+.comments .add-comment {
+    background-color: transparent;
+    position: relative;
+    margin-bottom: 50px;
+    
+}
+.comments .add-comment input {
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    width: 90%;/*الباقي للصورة*/
+    margin-right: 7px;
+}
+/*تنسيق صورة المعلق*/
+.comments .commenter-pic {
+    width: 50px;
+    height: 50px;
+    display: inline-block;/*لكي يأتي بجانبها الاسم*/
+    background-color: #fff;
+}
+.comments .add-comment button.btn-default {
+    margin-top: 14px;
+    position: relative;
+    right: 35rem;
+}
+/*تنسيق الحاوية التي ستحتوي على التعليقات*/
+.comments .comment-box {
+    width: 100%;
+    overflow: hidden;/*بهالشكل مابطلع شي برات الحاوية بل فقط ينقص. نعالج القص بزيادة الحشوة بادنك*/
+    padding: 10px 10px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+/*تنسيق اسم المعلق*/
+.comments .commenter-name a{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 7px 0px 20px; 
+}
+/*تنسيق نص التعليق*/
+.comments p.comment-txt {
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 0px 0px 15px;
+}
+/*تنسيق أيقونات الإعجاب والرد وعدم الإعجاب*/
+.comment-like, .comment-dislike, .comment-reply{
+    background-color: transparent;/*تأخذ لون الخلفية التي فيها*/
+    border: none;/*إخفاء البوردر*/
+}
+
+.comments .replied {
+    position: relative;
+    background-color: #fff;
+    width: 95%;
+    float: left;
+    margin-top: 15px;
+}
+/*إخفاء صندوق الرد في البداية*/
+.comments .reply-box {
+    display: none;
+}
+@media (max-width: 576px) {
+    /*وضع فراغ تحت الزر لكي تبتعد الأيقونات عنه*/
+    .watch-page #myBtn{
+        margin-bottom:35px;
+    }
+    /*تصغير حجم حقل الإدخال لكي يأتي بمحاذاة الصورة*/
+    .comments .add-comment input{
+        width: 80%;
+    }
+    /*تقليل الحشوة من على اليمين لكي تظهر الأزرار*/
+    .comments .add-comment button.btn-default{
+        right:232px;
+    }
+    .watch-page .card:hover .fa-play{
+        right:220px;
+        bottom:6rem;
+        font-size:25px;
+    }
+}
+@media (min-width: 577px) and (max-width: 992px) {
+    .watch-page .card-block {
+        margin-right: 11px;
+    }
+    .watch-page a.channel-img{
+        display: block;
+        margin: 6px -14px 0px 0px;
+    }
+    .watch-page #myBtn{
+        margin-bottom:35px;
+    }
+    .watch-page .card-block p{
+        font-size:10px;
+    }
+    div.col-sm-7{
+        padding-right: 0px;
+    }
+    .watch-page a.search-link{
+        display: block;
+        margin: 6px -14px 0px 0px;
+        font-size: 12px;
+    }
+    .watch-page .search-img{
+        width: 21px;
+    }
+    .watch-page .card .time {
+        font-size: 11px;
+        bottom: 49px;
+        left: 21px;
+    }
+    .watch-page .card .fa-play {
+        bottom: 59px;
+        left: 58px;
+    }
+    .watch-page{
+        margin-right: 20px;
+    }
+    /*تصغير حجم حقل الإدخال لكي يأتي بمحاذاة الصورة*/
+    .comments .add-comment input{
+        width: 80%;
+    }
+    /*تقليل الحشوة من على اليمين لكي تظهر الأزرار*/
+    .comments .add-comment button.btn-default{
+        right: 258px
+    }
+}
